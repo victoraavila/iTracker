@@ -8,44 +8,48 @@
 import SwiftUI
 
 struct DetailView: View {
-    var activity: Activity
-    var activities: Activities
+    @Binding var activity: Activity
     
     var body: some View {
         ScrollView {
-            VStack {
+            VStack() {
                 Text(activity.title)
                     .font(.title.bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, 5)
-                    .padding()
+                    .padding(.bottom, 10)
+                    .padding(.leading, 10)
                 
                 Text(activity.description)
+                    .padding(.bottom, 30)
+                
+                CustomDividerView()
+                    .padding(.horizontal, 20)
                 
                 Text("Number of Times")
                     .font(.title.bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom, 5)
-                    .padding()
+                    .padding(.bottom, 10)
+                    .padding(.leading, 10)
                 
                 Text("I did \(activity.title) \(activity.numberOfTimes) times.")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 10)
+                    .padding(.bottom, 30)
+                
+                CustomDividerView()
+                    .padding(.horizontal, 20)
                 
                 HStack {
-                    Text("Increment count?")
+                    Text("Did you \(activity.title)?")
                         .font(.title.bold())
                         .frame(alignment: .leading)
-                        .padding(.leading, 15)
+                        .padding(.leading, 10)
                     
                     Spacer()
                     
                     ZStack {
                         Button() {
-                            var newActivity = activity
-                            newActivity.numberOfTimes += 1
-                            let indexOfOldActivity = activities.activities.firstIndex(of: activity)
-                            activities.activities[indexOfOldActivity ?? 0] = newActivity
+                            activity.numberOfTimes += 1
                         } label: {
                             RoundedRectangle(cornerRadius: 10)
                                 .frame(width: 50, height: 50)
@@ -64,8 +68,9 @@ struct DetailView: View {
 }
 
 #Preview {
-    DetailView(activity: Activity(title: "Go to Gym", 
-                                  description: "I should exercise 3 times a week to get stronger.",
-                                  numberOfTimes: 0),
-               activities: Activities())
+    let activity = Activity(title: "Go to Gym",
+                            description: "I should exercise 3 times a week to get stronger.",
+                            numberOfTimes: 0)
+    
+    return DetailView(activity: .constant(activity))
 }

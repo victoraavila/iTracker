@@ -16,10 +16,10 @@ struct ContentView: View {
         NavigationStack {
             List {
                 Section() {
-                    ForEach(activities.activities) { activity in
-                        NavigationLink(value: activity) {
+                    ForEach(activities.activities.indices, id: \.self) { activityIndex in
+                        NavigationLink(destination: DetailView(activity: $activities.activities[activityIndex])) {
                             VStack {
-                                Text(activity.title)
+                                Text(activities.activities[activityIndex].title)
                             }
                         }
                     }
@@ -27,9 +27,6 @@ struct ContentView: View {
                 } header: {
                     Text("Tracked Activities")
                 }
-            }
-            .navigationDestination(for: Activity.self) { activity in
-                DetailView(activity: activity, activities: activities)
             }
                 .navigationTitle("iTracker")
                 .navigationBarTitleDisplayMode(.inline)

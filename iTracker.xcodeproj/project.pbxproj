@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		96AF1B742BC262D600D72D7E /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF1B732BC262D600D72D7E /* DetailView.swift */; };
+		96AF1B762BC2791400D72D7E /* CustomDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF1B752BC2791400D72D7E /* CustomDividerView.swift */; };
 		96E3DE002BBFA20A00E12E5B /* iTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E3DDFF2BBFA20A00E12E5B /* iTrackerApp.swift */; };
 		96E3DE022BBFA20A00E12E5B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E3DE012BBFA20A00E12E5B /* ContentView.swift */; };
 		96E3DE042BBFA20C00E12E5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96E3DE032BBFA20C00E12E5B /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		96AF1B732BC262D600D72D7E /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		96AF1B752BC2791400D72D7E /* CustomDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDividerView.swift; sourceTree = "<group>"; };
 		96E3DDFC2BBFA20A00E12E5B /* iTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E3DDFF2BBFA20A00E12E5B /* iTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTrackerApp.swift; sourceTree = "<group>"; };
 		96E3DE012BBFA20A00E12E5B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			children = (
 				96E3DDFF2BBFA20A00E12E5B /* iTrackerApp.swift */,
 				96E3DE012BBFA20A00E12E5B /* ContentView.swift */,
+				96AF1B752BC2791400D72D7E /* CustomDividerView.swift */,
 				96AF1B732BC262D600D72D7E /* DetailView.swift */,
 				96E3DE112BBFA98500E12E5B /* AddView.swift */,
 				96E3DE0D2BBFA24D00E12E5B /* Activity.swift */,
@@ -152,6 +155,7 @@
 				96E3DE102BBFA5C700E12E5B /* Activities.swift in Sources */,
 				96AF1B742BC262D600D72D7E /* DetailView.swift in Sources */,
 				96E3DE0E2BBFA24D00E12E5B /* Activity.swift in Sources */,
+				96AF1B762BC2791400D72D7E /* CustomDividerView.swift in Sources */,
 				96E3DE122BBFA98500E12E5B /* AddView.swift in Sources */,
 				96E3DE022BBFA20A00E12E5B /* ContentView.swift in Sources */,
 				96E3DE002BBFA20A00E12E5B /* iTrackerApp.swift in Sources */,
