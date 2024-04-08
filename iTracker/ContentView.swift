@@ -17,22 +17,18 @@ struct ContentView: View {
         NavigationStack {
             List {
                 Section() {
-                    ForEach(activities.activities.indices, id: \.self) { activityIndex in
-                        NavigationLink(destination: DetailView(activity: $activities.activities[activityIndex])) {
+                    ForEach($activities.activities) { $activity in
+                        NavigationLink(destination: DetailView(activity: $activity)) {
                             VStack {
-                                Text(activities.activities[activityIndex].title)
+                                Text(activity.title)
                                     .frame(height: 40)
-                                
-                                    
                             }
-                            
                         }
-//                        .listRowBackground(Color.pink)
-                        .listRowBackground(prioritiesAndColors[activities.activities[activityIndex].priority])
+                        .listRowBackground(prioritiesAndColors[activity.priority])
                     }
                     .onDelete(perform: removeActivities)
                 } header: {
-                    Text("Tracked Activities")
+                    Text(activities.activities.count > 0 ? "Tracked Activities" : "")
                 }
             }
                 .navigationTitle("iTracker")
