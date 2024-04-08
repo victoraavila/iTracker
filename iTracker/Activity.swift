@@ -11,6 +11,8 @@ struct Activity: Hashable, Identifiable, Codable, Equatable {
     var id = UUID()
     let title: String
     let description: String
+    let category: String
+    let priority: String
     var numberOfTimes: Int
 }
 

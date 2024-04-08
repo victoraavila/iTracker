@@ -11,7 +11,7 @@ struct CustomDividerView: View {
     var body: some View {
         Rectangle()
             .frame(height: 2)
-            .foregroundStyle(Color(red: 0.2, green: 0.2, blue: 0.3))
+            .foregroundStyle(Color(.white))
             .padding(.vertical)
     }
 }

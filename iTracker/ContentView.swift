@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var activities = Activities()
     
+    let prioritiesAndColors = ["Low": Color(.green), "Medium": Color(.yellow), "High": Color(.red)]
     @State private var showingAddActivity = false
     
     var body: some View {
@@ -20,8 +21,14 @@ struct ContentView: View {
                         NavigationLink(destination: DetailView(activity: $activities.activities[activityIndex])) {
                             VStack {
                                 Text(activities.activities[activityIndex].title)
+                                    .frame(height: 40)
+                                
+                                    
                             }
+                            
                         }
+//                        .listRowBackground(Color.pink)
+                        .listRowBackground(prioritiesAndColors[activities.activities[activityIndex].priority])
                     }
                     .onDelete(perform: removeActivities)
                 } header: {
